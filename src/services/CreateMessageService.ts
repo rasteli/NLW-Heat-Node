@@ -1,5 +1,5 @@
 import prismaClient from "../prisma"
-import Helper from "../utils/helper"
+import { io } from "../app"
 
 class CreateMessageService {
   async execute(text: string, user_id: string) {
@@ -13,7 +13,7 @@ class CreateMessageService {
       }
     })
 
-    Helper.setMessageInfo(message)
+    io.emit("new_message", message)
 
     return message
   }
