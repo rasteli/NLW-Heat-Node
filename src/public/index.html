@@ -16,7 +16,7 @@
     <script>
       const socket = io("http://localhost:3333")
 
-      socket.on("new_message", data => console.log(data))
+      socket.on("send_message", data => console.log(data))
     </script>
   </body>
 </html>
