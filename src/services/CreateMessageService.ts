@@ -13,7 +13,7 @@ class CreateMessageService {
       }
     })
 
-    io.emit("send_message", message)
+    io.emit("new_message", message)
 
     return message
   }
